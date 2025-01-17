@@ -10,8 +10,7 @@ sector.**
 
 ## 📹 Video Demonstration
 
-[![Watch Video](https://via.placeholder.com/800x400?text=Watch+Video)](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing)  
-[Watch the full demonstration here](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing)
+[Watch the full demonstration here]([https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing))
 
 ---
 
@@ -22,25 +21,15 @@ For detailed information about the project, refer to the [PDF Documentation](htt
 
 ---
 
-## 🚀 Challenges and Solutions
+## 🛠️ Challenges and Solutions
 
-Challenges
+### 1. **Readability of Vertical Text**
+- **Issue**: Vertical text orientation required users to tilt their heads or rotate devices.
+- **Solution**: Introduced horizontal scrolling for a natural reading flow.
 
-Readability of Vertical Text:
-
-Vertical text orientation required users to tilt their heads or rotate devices.
-
-Navigation Design:
-
-Balancing aesthetics with functionality in scrolling navigation.
-
-Solutions
-
-Introduced horizontal scrolling for a natural reading flow.
-
-Added visual cues like arrows to indicate scrollable content.
-
-
+### 2. **Navigation Design**
+- **Issue**: Balancing aesthetics with functionality in scrolling navigation.
+- **Solution**: Added visual cues like arrows to indicate scrollable content.
 
 ---
 

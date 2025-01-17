@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telesto Energy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      :root {
+        --primary-color: #0c1835;
+        --white: #ffffff;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background-color: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        z-index: 50;
+        box-shadow: var(--shadow);
+      }
+
+      .logo-container img {
+        width: 150px; /* Reduced from default size */
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Add slideshow styles */
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .slide.active {
+        opacity: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        color: var(--white);
+        padding: 2rem;
+        border-radius: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typewriter 2s steps(26) infinite alternate,
+          blink 800ms steps(26) infinite normal;
+      }
+      .panel:nth-child(3) h3 {
+        color: #0c1835;
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0%;
+        }
+
+        to {
+          width: 50%;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          border-color: black;
+        }
+
+        to {
+          border-color: transparent;
+        }
+      }
+
+      .menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s;
+      }
+
+      .menu-button:hover {
+        background-color: white;
+      }
+
+      .hamburger-icon {
+        width: 24px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: all 0.3s;
+      }
+
+      .navigation {
+        position: fixed;
+        top: 64px;
+        right: 0;
+        width: 280px;
+        height: calc(100vh - 64px);
+        background-color: var(--white);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 40;
+        box-shadow: var(--shadow);
+      }
+
+      .navigation.open {
+        transform: translateX(0);
+      }
+
+      .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 30;
+      }
+
+      .menu-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-item {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+        font-size: 1.125rem;
+        color: var(--primary-color);
+        background: none;
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .nav-item:hover {
+        background-color: #f3f4f6;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 64px;
+        text-align: center;
+        background-color: #f3f4f6;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.25rem;
+        color: var(--white);
+      }
+
+      .panels-container {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        width: 90vw;
+        gap: 10px;
+        padding: 20px;
+      }
+
+      .panel {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 80vh;
+        border-radius: 50px;
+        color: #fff;
+        cursor: pointer;
+        flex: 0.5;
+        position: relative;
+        transition: all 0.7s ease-in;
+      }
+
+      .panel-content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in;
+      }
+
+      .panel.active {
+        flex: 5;
+      }
+
+      .panel.active .panel-content {
+        opacity: 1;
+        pointer-events: all;
+        transition: opacity 0.3s ease-in 0.4s;
+      }
+
+      .panel h3 {
+        font-size: 28px;  /* Larger heading size */
+        margin: 0 0 20px 0;  /* More space below heading */
+        color: var(--white);
+      }
+
+      .panel-submenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(12, 24, 53, 0.8);
+        border-radius: 12px; /* Slightly larger border radius */
+        padding: 15px; /* Increased padding */
+        max-width: 450px; /* Increased max-width */
+      }
+
+      .panel-submenu li {
+        padding: 12px 15px; /* Increased padding */
+        font-size: 18px; /* Larger font size */
+        line-height: 1.4; /* Better line height for readability */
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+        white-space: normal;
+        margin-bottom: 5px; /* Added space between items */
+      }
+
+      .panel-submenu li:last-child {
+        border-bottom: none;
+      }
+
+      .panel-submenu li:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .panel:nth-child(3) .panel-submenu {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .panel:nth-child(3) .panel-submenu li {
+        color: var(--primary-color);
+        border-bottom: 1px solid rgba(12, 24, 53, 0.1);
+      }
+
+      .panel:nth-child(3) .panel-submenu li:hover {
+        background-color: rgba(12, 24, 53, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 100vw;
+          flex-direction: column;
+          height: auto;
+        }
+
+        .panel {
+          height: 200px;
+          border-radius: 25px;
+        }
+
+        .panel.active {
+          height: 400px;
+        }
+
+        .panel-content {
+          bottom: 15px;
+          left: 15px;
+          right: 15px;
+        }
+
+        .panel h3 {
+          font-size: 22px;  /* Adjusted for mobile */
+          margin-bottom: 15px;
+        }
+
+        .panel-submenu {
+          max-width: 100%;
+          padding: 12px;
+        }
+
+        .panel-submenu li {
+          padding: 8px 10px;
+          font-size: 16px;  /* Adjusted for mobile but still larger than before */
+          margin-bottom: 3px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="logo.png" alt="Telesto Logo" />
+      </div>
+      <button class="menu-button" aria-label="Toggle Menu">
+        <div class="hamburger-icon">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+      </button>
+    </nav>
+
+    <div class="menu-overlay"></div>
+    <nav class="navigation">
+      <button class="nav-item">Home</button>
+      <button class="nav-item">About Us</button>
+      <button class="nav-item">Alliance & Partners</button>
+      <button class="nav-item">Projects</button>
+      <button class="nav-item">Blog</button>
+      <button class="nav-item">Media</button>
+      <button class="nav-item">Contact Us</button>
+    </nav>
+
+    <main>
+      <div class="hero">
+        <div class="slideshow">
+          <div
+            class="slide active"
+            style="background-image: url('home-banner1.jpg')"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('home-banner2.jpg')"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('home-banner4.jpg')"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('home-banner5.jpg')"
+          ></div>
+        </div>
+        <div class="hero-content">
+          <h1>Welcome to Telesto Energy</h1>
+          <p>Scroll to explore our services</p>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="panels-container">
+        <div class="container">
+          <div
+            class="panel active"
+            style="background-image: url('home-banner1.jpg')"
+          >
+            <div class="panel-content">
+              <h3>AI & Analytics</h3>
+              <ul class="panel-submenu">
+                <li>
+                  Artificial Intelligence & Bigdata Analytics for Oil & Gas
+                </li>
+                <li>Mature Field Solutions</li>
+                <li>Business Case</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" style="background-image: url('home-banner2.jpg')">
+            <div class="panel-content">
+              <h3>Portfolio Advisory</h3>
+              <ul class="panel-submenu">
+                <li>Portfolio Advisory</li>
+                <li>Value Assurance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" style="background-image: url('home-banner3.jpg')">
+            <div class="panel-content">
+              <h3>Subsurface Consulting</h3>
+              <ul class="panel-submenu">
+                <li>Exploration and Appraisal</li>
+                <li>Field Development</li>
+                <li>Reservoir Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" style="background-image: url('home-banner5.jpg')">
+            <div class="panel-content">
+              <h3>Team Telesto</h3>
+              <ul class="panel-submenu">
+                <li>Advisors</li>
+                <li>Core Team</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Menu functionality
+      const menuButton = document.querySelector(".menu-button");
+      const navigation = document.querySelector(".navigation");
+      const menuOverlay = document.querySelector(".menu-overlay");
+      const navItems = document.querySelectorAll(".nav-item");
+
+      function toggleMenu() {
+        navigation.classList.toggle("open");
+        menuOverlay.classList.toggle("open");
+        const isOpen = navigation.classList.contains("open");
+
+        const lines = document.querySelectorAll(".hamburger-line");
+        if (isOpen) {
+          lines[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+          lines[1].style.opacity = "0";
+          lines[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
+        } else {
+          lines[0].style.transform = "none";
+          lines[1].style.opacity = "1";
+          lines[2].style.transform = "none";
+        }
+      }
+
+      menuButton.addEventListener("click", toggleMenu);
+      menuOverlay.addEventListener("click", toggleMenu);
+      navItems.forEach((item) => item.addEventListener("click", toggleMenu));
+
+      // Panels functionality
+      const panels = document.querySelectorAll(".panel");
+
+      panels.forEach((panel) => {
+        panel.addEventListener("click", () => {
+          removeActiveClasses();
+          panel.classList.add("active");
+        });
+      });
+
+      function removeActiveClasses() {
+        panels.forEach((panel) => {
+          panel.classList.remove("active");
+        });
+      }
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add("active");
+      }
+
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 5000);
+    </script>
+  </body>
+</html>

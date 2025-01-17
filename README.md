@@ -6,7 +6,11 @@
 
 ## 📹 Video Demonstration
 
-For Demonstration, refer to the [Video Demo]([https://docs.google.com/document/d/1q-8HoFIgkrZOKDz3U_Yzq7wyHtdPShmY3tcKBlwvrpE/edit?usp=sharing](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)).
+## 📹 Video Demonstration
+
+[![Watch Video](https://via.placeholder.com/800x400?text=Watch+Video)](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)  
+[Watch the full demonstration here](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)
+
 ---
 
 ## 📄 Documentation

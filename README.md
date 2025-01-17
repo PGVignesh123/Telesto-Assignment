@@ -10,13 +10,15 @@ sector.**
 
 ## 📹 Video Demonstration
 
-[Watch the full demonstration here](#) *([Insert link to the video here. For GitHub-hosted videos, upload the file and copy its link.](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing))*
+[![Watch Video](https://via.placeholder.com/800x400?text=Watch+Video)](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing)  
+[Watch the full demonstration here](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing)
 
 ---
 
 ## 📄 Documentation
 
-For detailed information about the project, refer to the [PDF Documentation](#). *([Insert the link to the PDF file here. If hosted in the repo, use relative paths, e.g., `/docs/documentation.pdf`.](https://docs.google.com/document/d/1q-8HoFIgkrZOKDz3U_Yzq7wyHtdPShmY3tcKBlwvrpE/edit?usp=sharing))*
+For detailed information about the project, refer to the [PDF Documentation](https://docs.google.com/document/d/1q-8HoFIgkrZOKDz3U_Yzq7wyHtdPShmY3tcKBlwvrpE/edit?usp=sharing).
+
 
 ---
 

@@ -8,7 +8,7 @@
 
 ## 📹 Video Demonstration
 
-[![Watch Video](https://via.placeholder.com/800x400?text=Watch+Video)](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)  
+[![Watch Video]([https://via.placeholder.com/800x400?text=Watch+Video](https://github.com/PGVignesh123/Telesto-Assignment/blob/main/Screenshots/Screenshot%20(28).png?raw=true))](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)  
 [Watch the full demonstration here](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing)
 
 ---

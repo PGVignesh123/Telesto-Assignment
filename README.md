@@ -10,6 +10,7 @@ sector.**
 
 ## 📹 Video Demonstration
 
+[![Watch Video](https://via.placeholder.com/800x400?text=Watch+Video)]([https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing](https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing))  
 [Watch the full demonstration here]([https://drive.google.com/file/d/1G9feVhz4G9bFbDR-RcVkjSd2G6N1qVIG/view?usp=sharing](https://drive.google.com/file/d/1VQR0XTx7VRMZaf-eZQJbbpcu34jxJNUe/view?usp=sharing))
 
 ---
